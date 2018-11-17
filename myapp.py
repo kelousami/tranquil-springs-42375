@@ -1,18 +1,18 @@
 from flask import Flask
-app = Flask(__name__)
+application = Flask(__name__)
 
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
-@app.route('/')
+@application.route('/')
 def hello():
-    logging.info("saying hello")
+    logging.info("Saying hello")
     return "Hello World!"
 
-@app.route('/<name>')
+@application.route('/<name>')
 def hello_name(name):
-    logging.info("saying hello to {}".format(name))
+    logging.info("Saying hello to {}".format(name))
     return "Hello {}!".format(name)
 
 if __name__ == '__main__':
-    app.run()
+    application.run()
